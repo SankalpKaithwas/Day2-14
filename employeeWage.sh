@@ -1,30 +1,29 @@
-ratePrHr=20
+ratePrDay=160
+i=0
+days=0
+partDays=0
+while (($i<20))
+do
+check=$((RANDOM%2))
 isPresent=1
 partTime=$((RANDOM%2))
-check=$((RANDOM%2))
 case $check in
 
-	$isPresent) echo "Employee is Present"
-		wrkHr=8
-		;;
-
-	*) echo "Employee is absent"
-		wrkHr=0
+	$isPresent) days=$(($days+1))
 		;;
 esac
-salary=$(($ratePrHr*wrkHr))
-echo "Daily salary is $salary"
+case $check in
+
+	$partTime) partDays=$(($partDays+1))
+		;;
+esac
+
+i=$(($i+1))
+done
+
+salary=$(($days*$ratePrDay))
+echo "Monthly salary of employee is $salary"
 
 # Part time employee wage
-case $check in
-
-	$partTime) echo "Employee is present"
-		partTimeHr=8
-		;;
-
-	*) echo "Employee is absent"
-		partTimeHr=0
-		;;
-esac
-salaryPartTime=$(($ratePrHr*partTimeHr))
-echo "Salary of part Time employee is $salaryPartTime"
+salaryPartTime=$(($partDays*$ratePrDay))
+echo "Monthly Salary of part Time employee is $salaryPartTime"
