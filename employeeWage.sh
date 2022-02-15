@@ -29,7 +29,14 @@ done
 
 getWorkHours
 
-echo "Work hours of employee is $workHr"
+ratePrHr=20
+totalWageEmp=$(($workHr*$days*$ratePrHr))
+dailyWageEmp=$(($ratePrHr*$workHr))
+echo "Employee worked for $days days"
+echo "Total wage of employee is $totalWageEmp and daily wage of employee is $dailyWageEmp"
 
-# Part time employee work hours
-echo "Work hours of part Time employee is $partWorkHr"
+# Part time employee
+totalWagePartEmp=$(($partDays*$partWorkHr*$ratePrHr))
+partDailyWage=$(($ratePrHr*$partWorkHr))
+echo "Part time employee worked for $partDays"
+echo "Total wage of part Time employee is $totalWagePartEmp and dailt wage is $partDailyWage"
