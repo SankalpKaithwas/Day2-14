@@ -39,4 +39,4 @@ echo "Total wage of employee is $totalWageEmp and daily wage of employee is $dai
 totalWagePartEmp=$(($partDays*$partWorkHr*$ratePrHr))
 partDailyWage=$(($ratePrHr*$partWorkHr))
 echo "Part time employee worked for $partDays"
-echo "Total wage of part Time employee is $totalWagePartEmp and dailt wage is $partDailyWage"
+echo "Total wage of part Time employee is $totalWagePartEmp and daily wage is $partDailyWage"
