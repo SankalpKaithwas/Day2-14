@@ -1,10 +1,11 @@
-ratePrHr=20
-workHr=0
-partWorkHr=0
+function getWorkHours() {
 i=0
 days=0
 partDays=0
-while (( $i<20 && $workHr<100 ))
+workHr=0
+partWorkHr=0
+
+while (( $i<20 && $workHr<100 && $partWorkHr<100 ))
 do
 check=$((RANDOM%2))
 isPresent=1
@@ -24,10 +25,11 @@ esac
 
 i=$(($i+1))
 done
+}
 
-salary=$(($days*$ratePrHr*$workHr))
-echo "Monthly salary of employee is $salary for $days days $workHr hours"
+getWorkHours
 
-# Part time employee wage
-salaryPartTime=$(($partDays*$ratePrHr*$partWorkHr))
-echo "Monthly Salary of part Time employee is $salaryPartTime for $partDays days $partWorkHr hours"
+echo "Work hours of employee is $workHr"
+
+# Part time employee work hours
+echo "Work hours of part Time employee is $partWorkHr"
